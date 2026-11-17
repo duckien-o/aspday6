@@ -1,0 +1,35 @@
+@model day6_17.Models.Product
+
+@{
+    ViewData["Title"] = "Sửa sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2>Sửa sản phẩm</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Tên sản phẩm</label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Giá</label>
+                    <input asp-for="Price" type="number" step="0.01" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Quantity" class="form-label">Số lượng</label>
+                    <input asp-for="Quantity" type="number" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </form>
+        </div>
+    </div>
+</div>
